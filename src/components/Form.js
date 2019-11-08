@@ -10,7 +10,7 @@ const LoginFrom = ({ errors, touched, status }) => {
     if (status) {
       setUser([...user, status]);
     }
-  }, [status, user]);
+  }, [status]);
 
   return (
     <Form>
@@ -27,7 +27,7 @@ const LoginFrom = ({ errors, touched, status }) => {
         <Field type="checkbox" name="tos" value="false" />
         <span>Terms of Service</span>
       </label>
-      <button type="button">Submit!</button>
+      <button>Submit!</button>
     </Form>
   );
 };
@@ -51,6 +51,7 @@ export default withFormik({
     axios
       .post("https://reqres.in/api/users", values)
       .then(response => {
+        console.log(response);
         setStatus(response.data);
       })
       .catch(error => {
