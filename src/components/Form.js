@@ -27,7 +27,7 @@ const LoginFrom = ({ errors, touched, status }) => {
         <Field type="checkbox" name="tos" value="false" />
         <span>Terms of Service</span>
       </label>
-      <button>Submit!</button>
+      <button type="submit">Submit!</button>
     </Form>
   );
 };
